@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+
+	<div class="col-md-4">
+
+	    <img src="/static/{{ image }}" style="padding-top:25px" />
+
+	</div>
+
+	<div class="col-md-8">
+
+		<h3>{{ name }}</h3>
+
+		<hr />
+
+		<h4>interpretation</h4>
+		<p>{{ meaning }}</p>
+
+		{% if cardtype == "major": %}
+
+		    <h4>message</h4>
+			<p><em>{{ message }}</em></p>
+
+		{% endif %}
+
+		<h4>if reversed</h4>
+		<p>{{ reversed_meaning }}</p>
+
+		<hr />
+
+		<h4>hermetic correspondences</h4>
+
+		<p><em>qabalah</em>: {{ qabalah|safe }}</p>
+
+		{% if cardtype == "major": %}
+
+			<p><em>hebrew letter</em>: <span style="font-family: 'Noto Serif Hebrew'">{{ hebrew_letter|safe }}</span></p>
+
+			{% if sequence != 15 %}
+
+				<p><em>meditation</em>: <br />
+				<span style="white-space: pre">{{ meditation }}<span></p>
+					
+			{% endif %}
+
+		{% endif %}
+
+		<hr />
+
+		<p><a href="{{ previous }}">previous card</a> || <a href="{{ next }}">next card</a></p>
+
+	</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+
+
+{% extends "base.html" %}
+
+<head>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7809086575818609"
+    crossorigin="anonymous">
+   </script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {
+                var loadGTag = function() {
+                        if (window.gtagScriptLoaded) return;
+                        window.gtagScriptLoaded = true;
+                        var script = document.createElement('script');
+                        script.async = true;
+                        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-3BHHDXQD5P';
+                        document.head.appendChild(script);
+
+                        script.onload = function() {
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', 'G-3BHHDXQD5P');
+                        };
+                };
+                setTimeout(loadGTag, 10000);
+                document.addEventListener('mousemove', loadGTag);
+                document.addEventListener('scroll', loadGTag);
+        });
+    </script>
+
+
+</head>
+
+
+{% block content %}
+<section aria-labelledby="welcome-heading">
+    <div class="starter-template">
+        <h2 id="welcome-heading" class="text-center mb-4">Welcome to Tarot Guide</h2>
+        
+        <!-- 介绍区 -->
+        <article class="row mb-5">
+            <div class="col-md-8 col-md-offset-2">
+                <p class="lead text-center">
+                    Explore the wisdom of tarot with our easy-to-use readings and comprehensive study resources. 
+                    Whether you're a beginner or an experienced reader, find guidance and inspiration here.
+                </p>
+            </div>
+        </article>
+
+        <!-- 占卜选项区 -->
+        <section aria-labelledby="reading-options-heading" class="row mb-6">
+            <h3 id="reading-options-heading" class="text-center mb-4">Try a Reading</h3>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="card-deck">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">One Card Reading</h4>
+                                    <p class="card-text">Get a quick insight for your day or a specific question.</p>
+                                    <a href="/one-card" class="btn btn-primary">Draw a Card</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h4 class="card-title">Three Card Spread</h4>
+                                    <p class="card-text">Explore past, present, and future influences.</p>
+                                    <a href="/three-cards" class="btn btn-primary">Draw Three Cards</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 学习资源区 -->
+        <section aria-labelledby="study-resources-heading">
+            <h3 id="study-resources-heading" class="text-center mb-4">Learn Tarot</h3>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <p class="mb-4">
+                    Dive deeper into tarot symbolism and meanings with our comprehensive study guide, 
+                    featuring detailed interpretations for all 78 cards.
+                </p>
+                <a href="/tarot-study" class="btn btn-success">Explore Tarot Study</a>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

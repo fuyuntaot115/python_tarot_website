@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+
+	{% if rev: %}
+
+		<div class="col-md-4">
+
+	    	<img src="/static/{{ image }}" style="transform: rotate(180deg); padding-bottom:25px" />
+
+		</div>
+
+		<div class="col-md-8">
+
+		    <h3>{{ name }} reversed</h3>
+
+			<hr />
+
+		   	<h4>interpretation</h4>
+
+			<p>{{ reversed_meaning }}</p>
+
+			<p><a href="/one-card/{{ url }}">more about this card</a></p>
+
+
+		</div>
+
+	{% else %}
+
+		<div class="col-md-4">
+
+			<img src="/static/{{ image }}" style="padding-top:25px" />
+
+		</div>
+
+		<div class="col-md-8">
+
+			<h3>{{ name }}</h3>
+
+			<hr />
+
+			<h4>interpretation</h4>
+			<p>{{ meaning }}</p>
+
+			{% if cardtype == "major": %}
+
+				<h4>message</h4>
+				<p><em>{{ message }}</em></p>
+
+			{% endif %}
+
+			<p><a href="/one-card/{{ url }}">more about this card</a></p>
+
+		</div>
+
+	{% endif %}
+
+</div>
+
+{% endblock %}
